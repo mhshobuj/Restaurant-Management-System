@@ -1,0 +1,36 @@
+CREATE TABLE `users` (
+  `id` mediumint(9) AUTO_INCREMENT PRIMARY KEY,
+  `email` text,
+  `password` text,
+  `name` text,
+  `address` text,
+  `status` text,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `foods` (
+  `id` mediumint(9) AUTO_INCREMENT PRIMARY KEY,
+  `name` text,
+  `image` text,
+  `normal_price` text,
+  `offering_price` text,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `orders` (
+  `id` mediumint(9) AUTO_INCREMENT PRIMARY KEY,
+  `user_id` text,
+  `status` text,
+  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `order_details` (
+  `id` mediumint(9) AUTO_INCREMENT PRIMARY KEY,
+  `order_id` text,
+  `food_id` text,
+  `quantity` text,
+  `extra` text,
+  `price` text
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
